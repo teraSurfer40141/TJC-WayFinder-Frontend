@@ -4,9 +4,9 @@ export type schLocation = {
   label: string;
 };
 export const schlocations: schLocation[] = [{
-  "value": "main entrance",
-  "code": "A1",
-  "label": "Main Entrance"
+  "value": "main entrance", // lowercase everything of the label
+  "code": "A1", // that will be used in the backend
+  "label": "Main Entrance" // that will show on the website
 }, {
   "value": "a stairs",
   "code": "AS",

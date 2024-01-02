@@ -1,24 +1,34 @@
 "use client";
+import * as React from "react";
 import { Progress } from "@/components/ui/progress";
 import { useAtom } from "jotai";
 import { presentLocation, goLocation } from "@/atoms";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { postMessageAndGetImage } from "./getMap";
+import { postMessageAndGetImages } from "./getMap";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+
 export default function Images() {
   const [progress, setProgress] = useState(0);
   const [isImageLoaded, setImageLoaded] = useState(false);
-  const [imageUrl, setImageUrl] = useState("");
+  const [imageUrls, setImageUrls] = useState([]);
   const [selectedschLocation] = useAtom(presentLocation);
   const [destinationLocation] = useAtom(goLocation);
 
   useEffect(() => {
     const fetchData = async () => {
-      const url = await postMessageAndGetImage({
+      const urls = await postMessageAndGetImages({
         currentLocation: selectedschLocation?.code || "",
         destinationLocation: destinationLocation?.code || "",
       });
-      setImageUrl(url);
+      setImageUrls(urls);
     };
 
     fetchData();
@@ -39,7 +49,7 @@ export default function Images() {
     }, 1000);
 
     // Clear the progress interval when the image is loaded
-    if (imageUrl) {
+    if (imageUrls.length > 0) {
       setImageLoaded(false);
       clearInterval(progressInterval);
     }
@@ -48,14 +58,12 @@ export default function Images() {
     return () => {
       clearInterval(progressInterval);
     };
-  }, [imageUrl]);
-
-
-
+  }, [imageUrls]);
 
   const myLoader = ({ src }: { src: string }) => {
     return src;
   };
+
   return (
     <>
       <div className="relative">
@@ -64,20 +72,31 @@ export default function Images() {
             <Progress value={progress} />
           </div>
         )}
-        {imageUrl && (
-          <Image
-            loader={myLoader}
-            src={imageUrl}
-            alt="Map"
-            layout="responsive"
-            width={100}
-            height={100}
-            onLoad={() => {
-              setImageLoaded(true);
-              setProgress(100);
-            }}
-          />
-        )}
+    <Carousel className="w-full max-w-xs">
+      <CarouselContent>
+        {imageUrls.map((imageUrl, index) => (
+          <CarouselItem key={index}>
+            <div className="p-1">
+              <Card>
+                <CardContent className="flex aspect-square items-center justify-center p-6">
+                  <Image
+                    loader={myLoader}
+                    src={imageUrl}
+                    alt={`Map ${index}`}
+                    layout="responsive"
+                    width={100}
+                    height={100}
+                  />
+                </CardContent>
+              </Card>
+            </div>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      <CarouselPrevious />
+      <CarouselNext />
+    </Carousel>
+
       </div>
     </>
   );

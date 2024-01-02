@@ -21,7 +21,7 @@ export default function WayFinder() {
           <CardTitle>Find your way</CardTitle>
         </CardHeader>
         <CardContent>
-        <Images />
+        <Images /> 
         </CardContent>
         <CardFooter className="flex justify-center">
           <Button className="px-8 py-4 text-lg">

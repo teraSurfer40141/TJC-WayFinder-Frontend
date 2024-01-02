@@ -1,9 +1,16 @@
-export async function postMessageAndGetImage({currentLocation, destinationLocation}: {currentLocation: string, destinationLocation: string}) {
+"use client ";
+export async function postMessageAndGetImages({
+  currentLocation,
+  destinationLocation,
+}: {
+  currentLocation: string;
+  destinationLocation: string;
+}) {
   //const url = "http://127.0.0.1:5000/api/wayfinder"; // for development only
-   const url = "https://tjc-wayfinder-backend.onrender.com/api/wayfinder"; // change to this when deploying
+  const url = "https://tjc-wayfinder-backend.onrender.com/api/wayfinder"; // change to this when deploying
   const message = {
-      "currentLocation": currentLocation,
-        "destinationLocation": destinationLocation
+    currentLocation: currentLocation,
+    destinationLocation: destinationLocation,
   };
 
   const response = await fetch(url, {
@@ -11,16 +18,17 @@ export async function postMessageAndGetImage({currentLocation, destinationLocati
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(message), 
+    body: JSON.stringify(message),
   });
 
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
 
-  const blob = await response.blob();
-  const urlCreator = window.URL || window.webkitURL;
-  const imageUrl = urlCreator.createObjectURL(blob);
-
-  return imageUrl;
+  const base64Strings = await response.json(); // assuming the response is an array of base64 strings
+  console.log(base64Strings);
+const imageUrls = base64Strings.map(
+  (base64String: string) => `data:image/png;base64,${base64String}`
+);
+return imageUrls;
 }
