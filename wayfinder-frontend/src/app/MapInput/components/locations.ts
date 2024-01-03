@@ -268,78 +268,78 @@ export const schlocations: schLocation[] = [{
 "code": "HSG", 
 "label": "Seating Gallery" 
 },
- {"value": "humans cr1", 
-  "code": "A01LG", 
-  "label": "Humans CR1" 
- },
- {"value": "humans cr2", 
-  "code": "A02LG", 
-  "label": "Humans CR2" 
- },
- {"value": "main stairs b", 
-  "code": "MSB", 
-  "label": "Main Stairs B" 
- },
- {"value": "court", 
-  "code": "Court", 
-  "label": "Court" 
- },
- {"value": "court staircase basement", 
-  "code": "CSCB", 
-  "label": "Court staircase Basement" 
- },
- {"value": "b stairs (basement)", 
-  "code": "BSB", 
-  "label": "B Stairs (Basement)" 
- },
- {"value": "amphitheatre", 
-  "code": "HAB", 
-  "label": "Amphitheatre" 
- },
- {"value": "multipurpose room", 
-  "code": "HMPR", 
-  "label": "MultiPurpose Room" 
- },
- {"value": "multipurpose court", 
-  "code": "HMPC", 
-  "label": "MultiPurpose Court" 
- },
- {"value": "multipurpose hall", 
-  "code": "HMPH", 
-  "label": "MultiPurpose Hall" 
- },
- {"value": "rifle range", 
-  "code": "HRR", 
-  "label": "Rifle Range" 
- },
- {"value": "gym", 
-  "code": "H01LG", 
-  "label": "Gym" 
- },
- {"value": "h03lg", 
-  "code": "H03LG", 
-  "label": "H03LG" 
- },
- {"value": "female toilet (block h)", 
-  "code": "HFT", 
-  "label": "Female Toilet (Block H)" 
- },
- {"value": "male toilet (block h)", 
-  "code": "HMT", 
-  "label": "Male Toilet (Block H)" 
- },
- {"value": "parade square", 
-  "code": "HPS", 
-  "label": "Parade Square" 
- },
- {"value": "pe store", 
-  "code": "HPES", 
-  "label": "PE Store" 
- },
- {"value": "g stairs b", 
-  "code": "GSB", 
-  "label": "G Stairs B" 
- },
+{"value": "humans cr1", 
+ "code": "A01LG", 
+ "label": "Humans CR1" 
+},
+{"value": "humans cr2", 
+ "code": "A02LG", 
+ "label": "Humans CR2" 
+},
+{"value": "main entrance  stairs b", 
+ "code": "MSB", 
+ "label": "Main Entrance  Stairs B" 
+},
+{"value": "court", 
+ "code": "Court", 
+ "label": "Court" 
+},
+{"value": "lb court stairs", 
+ "code": "CSCB", 
+ "label": "LB Court Stairs" 
+},
+{"value": "lb b stairs", 
+ "code": "BSB", 
+ "label": "LB B Stairs" 
+},
+{"value": "amphitheatre", 
+ "code": "HAB", 
+ "label": "Amphitheatre" 
+},
+{"value": "multipurpose room", 
+ "code": "HMPR", 
+ "label": "MultiPurpose Room" 
+},
+{"value": "multipurpose court", 
+ "code": "HMPC", 
+ "label": "MultiPurpose Court" 
+},
+{"value": "multipurpose hall", 
+ "code": "HMPH", 
+ "label": "MultiPurpose Hall" 
+},
+{"value": "rifle range", 
+ "code": "HRR", 
+ "label": "Rifle Range" 
+},
+{"value": "gym", 
+ "code": "H01LG", 
+ "label": "Gym" 
+},
+{"value": "h03lg", 
+ "code": "H03LG", 
+ "label": "H03LG" 
+},
+{"value": "lb h f toilet", 
+ "code": "HFT", 
+ "label": "LB H F Toilet" 
+},
+{"value": "lb h m toilet", 
+ "code": "HMT", 
+ "label": "LB H M Toilet" 
+},
+{"value": "parade square", 
+ "code": "HPS", 
+ "label": "Parade Square" 
+},
+{"value": "pe store", 
+ "code": "HPES", 
+ "label": "PE Store" 
+},
+{"value": "lb g stairs", 
+ "code": "GSB", 
+ "label": "LB G Stairs" 
+},
  {"value": "stair 1", 
  "code": "DS", 
  "label": "Stair 1" 
