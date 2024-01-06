@@ -7,7 +7,7 @@ export async function postMessageAndGetImages({
   destinationLocation: string;
 }) {
   //const url = "http://127.0.0.1:5000/api/wayfinder"; // for development only
-  const url = "https://tjc-wayfinder-backend.onrender.com/api/wayfinder"; // change to this when deploying
+  const url = "https://TJCWayFinder.pythonanywhere.com/api/wayfinder"; // change to this when deploying
   const message = {
     currentLocation: currentLocation,
     destinationLocation: destinationLocation,
