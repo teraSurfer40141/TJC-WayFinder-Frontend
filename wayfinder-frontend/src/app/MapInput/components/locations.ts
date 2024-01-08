@@ -221,7 +221,7 @@ export const schlocations: schLocation[] = [{
 "label": "Bookshop Room" 
 },
 {"value": "cafe", 
-"code": "GC", 
+"code": "GNC", 
 "label": "Cafe" 
 },
 {"value": "j101", 
